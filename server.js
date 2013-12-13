@@ -44,5 +44,6 @@ app.get('/sneak', function(user_req, user_res){
 		})
 	} else {
 		user_res.send('invalid nytimes page');
+		
 	}
 });
