@@ -17,7 +17,7 @@ app.listen(port, function() {
 var reuse_count = 100;
 var cookie_store = {
 	"cookie" : false,
-	"times" : 0;
+	"times" : 0
 }
 
 var script_inject = '<script>jQuery("#pageLinks a").each(function(a, b){b.href = "/sneak?url=" + "http://www.nytimes.com" + b.attributes.href.textContent})</script>'
@@ -53,7 +53,7 @@ app.get('/sneak', function(user_req, user_res){
 function render_page(url, cookie, user_res) {
 	var options = URL.parse(url);
 	options['headers'] = {};
-	options['headers']['Cookie'] = dcookieata;
+	options['headers']['Cookie'] = cookie;
 	HTTP.request(options, function(res){
 		var first = true;
 		res.on('data', function(chunk){
