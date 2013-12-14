@@ -31,7 +31,12 @@ app.get('/sneak', function(user_req, user_res){
 			options['headers'] = {};
 			options['headers']['Cookie'] = data;
 			HTTP.request(options, function(res){
+				var first = true;
 				res.on('data', function(chunk){
+					if (first) {
+						res.setHeader('content-type', 'text/html');
+						first = false;
+					}
 					user_res.write(chunk);
 				});
 				res.on('end', function() {
@@ -45,6 +50,5 @@ app.get('/sneak', function(user_req, user_res){
 		})
 	} else {
 		user_res.send('invalid nytimes page');
-		
 	}
 });
