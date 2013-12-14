@@ -34,7 +34,7 @@ app.get('/sneak', function(user_req, user_res){
 				var first = true;
 				res.on('data', function(chunk){
 					if (first) {
-						res.setHeader('content-type', 'text/html');
+						user_res.setHeader('content-type', 'text/html');
 						first = false;
 					}
 					user_res.write(chunk);
