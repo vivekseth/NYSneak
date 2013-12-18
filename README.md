@@ -1,4 +1,6 @@
 NYSneak
 =======
 
-I have decided to remove my code.
+Sneak past the New York TImes Paywall
+
+whaaaat?
